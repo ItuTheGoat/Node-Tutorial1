@@ -4,26 +4,22 @@
 var http = require("http");
 var fs = require("fs");
 
-// Request is what the client sends to the server
-// Response is what the server communicates back
+// server set up
 var server = http.createServer(function(req, res) {
 	console.log("request was made: " + req.url);
-	res.writeHead(200, { "Content-Type": "application/json" });
-
-	// Object which will be served
-	var jsonObject = {
-		name: "Bruce",
-		surname: "Wayne",
-		aEgo: "Batman",
-		type: "Hero"
-	};
-
-	// need to pass a string or buffer in the end() method
-	res.end(JSON.stringify(jsonObject));
+	if (req.url === "/home" || req.url === "/") {
+		res.writeHead(200, { "Content-Type": "text/hml" });
+		fs.createReadStream(__dirname + "/index.html").pipe(res);
+	} else if (req.url === "/contact") {
+		res.writeHead(200, { "Content-Type": "text/hml" });
+		fs.createReadStream(__dirname + "/contact.html").pipe(res);
+	} else if (req.url === "/api/heros") {
+		var heros = [{ name: "T'Challa", aEgo: "Black Panther", status: "Hero" }];
+		res.writeHead(200, { "Content-Type": "application/json" });
+		res.end(JSON.stringify(heros));
+	}
 });
 
 // Specifying the port
 server.listen(3000, "127.0.0.1");
 console.log("Listening to port 3000");
-
-// Serving JSON
