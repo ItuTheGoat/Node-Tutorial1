@@ -1,0 +1,26 @@
+{
+  "name": "node-tutorial1",
+  "version": "1.0.0",
+  "description": "Test app for node",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ItuTheGoat/Node-Tutorial1.git"
+  },
+  "keywords": [
+    "fun",
+    "heros"
+  ],
+  "author": "ItuTheGoat",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ItuTheGoat/Node-Tutorial1/issues"
+  },
+  "homepage": "https://github.com/ItuTheGoat/Node-Tutorial1#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
