@@ -17,6 +17,9 @@ var server = http.createServer(function(req, res) {
 		var heros = [{ name: "T'Challa", aEgo: "Black Panther", status: "Hero" }];
 		res.writeHead(200, { "Content-Type": "application/json" });
 		res.end(JSON.stringify(heros));
+	} else {
+		res.writeHead(200, { "Content-Type": "text/html" });
+		fs.createReadStream(__dirname + "/404.html").pipe(res);
 	}
 });
 
