@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			body {
+				background: skyblue;
+				font-family: verdana;
+				color: #fff;
+				padding: 30px;
+			}
+			h1 {
+				font-size: 48px;
+				text-transform: uppercase;
+				letter-spacing: 2px;
+				text-align: center;
+			}
+			p {
+				font-size: 22px;
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Profile page for: <%= person %></h1>
+		<p>It seems like it works cuh</p>
+		<p>
+			<strong
+				><%= person %> has <%= data.cars %> cars and he is a <%= data.race %>
+				born
+			</strong>
+		</p>
+	</body>
+</html>

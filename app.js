@@ -4,6 +4,8 @@ var express = require("express");
 // Setup the express app
 var app = express();
 
+app.set("view engine", "ejs");
+
 app.get("/", function(req, res) {
 	res.sendFile(__dirname + "/index.html");
 });
@@ -12,9 +14,10 @@ app.get("/contact", function(req, res) {
 	res.sendFile(__dirname + "contact.html");
 });
 
-// Route parameters
-app.get("/profile/:id", function(req, res) {
-	res.send("You requested to see a profile with the ID of " + req.params.id);
+// Render a view
+app.get("/profile/:name", function(req, res) {
+	var data = { cars: 24, race: "dairy" };
+	res.render("profile", { person: req.params.name, data: data });
 });
 
 // Then we need to listen for the port
