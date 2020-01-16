@@ -9,7 +9,7 @@ app.get("/", function(req, res) {
 });
 
 app.get("/contact", function(req, res) {
-	res.send("Contact Page");
+	res.sendFile(__dirname + "contact.html");
 });
 
 // Route parameters
