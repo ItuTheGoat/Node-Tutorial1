@@ -16,7 +16,11 @@ app.get("/contact", function(req, res) {
 
 // Render a view
 app.get("/profile/:name", function(req, res) {
-	var data = { cars: 24, race: "dairy" };
+	var data = {
+		cars: 24,
+		race: "dairy",
+		hobbies: ["swerving", "earning", "curling", "whirling"]
+	};
 	res.render("profile", { person: req.params.name, data: data });
 });
 
