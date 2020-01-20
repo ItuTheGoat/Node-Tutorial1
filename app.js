@@ -5,6 +5,8 @@ var express = require("express");
 var app = express();
 
 app.set("view engine", "ejs");
+// Middleware to serve up static files
+app.use("/assets", express.static("assets"));
 
 app.get("/", function(req, res) {
 	res.render("index");
